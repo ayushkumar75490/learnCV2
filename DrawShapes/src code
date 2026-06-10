@@ -1,0 +1,33 @@
+import cv2
+
+img = cv2.imread("E:\python\output.jpg")
+
+if img is None:
+    print("image is not loaded")
+else:
+    wish = input(str("enter wish :"))
+    if wish == "line":
+        cv2.line(img,(20,30),(90,80),(255,255,0), 5)       # (img,pt1,pt2,color,thickness)
+        cv2.imshow("line image : ", img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+    elif wish == "rectangle":
+        cv2.rectangle(img,(20,30),(90,80),(255,0,0), 5)         # (img,topleft pt, bottomright pt, color, thickness)
+        cv2.imshow("line image : ", img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+    elif wish == "circle":
+        cv2.circle(img,(75,75),60, (255,255,0), 5)            # (img,center(x,y), radius, color, thickness)
+        cv2.imshow("line image : ", img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+    elif wish == "text":
+
+        # (img,text, point, Font,fontScale,color,thickness)
+
+        cv2.putText(img, "practice done",(20,30),cv2.FONT_HERSHEY_DUPLEX,0.8,(0,0,255),4)
+        cv2.imshow("line image : ", img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+    else:
+        print("invalid wish")
